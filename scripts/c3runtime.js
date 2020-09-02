@@ -3004,7 +3004,6 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 		C3.Behaviors.Platform.Cnds.IsJumping,
 		C3.Plugins.Sprite.Acts.SetAnim,
 		C3.Behaviors.Platform.Cnds.IsFalling,
-		C3.Plugins.System.Acts.Wait,
 		C3.Plugins.Sprite.Cnds.OnCreated,
 		C3.Plugins.Sprite.Cnds.CompareX,
 		C3.Behaviors.MoveTo.Acts.SetMaxSpeed,
@@ -3021,6 +3020,7 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 		C3.Behaviors.MoveTo.Cnds.IsMoving,
 		C3.Plugins.Sprite.Cnds.OnCollision,
 		C3.Plugins.Sprite.Acts.Destroy,
+		C3.Plugins.System.Acts.Wait,
 		C3.Plugins.System.Acts.RestartLayout,
 		C3.Behaviors.Platform.Cnds.OnLand,
 		C3.Behaviors.Platform.Acts.SetDoubleJumpEnabled,
@@ -3314,7 +3314,6 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 			return () => f0();
 		},
 		() => "Jump",
-		() => 0.2,
 		() => "Idle",
 		() => "Hazards",
 		() => 5000,
