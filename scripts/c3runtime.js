@@ -2973,11 +2973,10 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 		C3.Behaviors.Physics,
 		C3.Plugins.Text,
 		C3.Behaviors.DragnDrop,
-		C3.Plugins.System.Cnds.EveryTick,
-		C3.Plugins.Text.Acts.SetText,
-		C3.Plugins.System.Acts.SetVar,
 		C3.Plugins.System.Cnds.IsGroupActive,
 		C3.Plugins.System.Cnds.OnLayoutStart,
+		C3.Plugins.Sprite.Acts.SetVisible,
+		C3.Plugins.System.Acts.SetVar,
 		C3.Plugins.System.Exps.choose,
 		C3.Plugins.System.Acts.CreateObject,
 		C3.Plugins.System.Exps.random,
@@ -2987,6 +2986,7 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 		C3.Plugins.Sprite.Exps.Y,
 		C3.Plugins.System.Cnds.Compare,
 		C3.Plugins.System.Exps.viewporttop,
+		C3.Plugins.System.Cnds.EveryTick,
 		C3.Plugins.System.Acts.ScrollY,
 		C3.Plugins.System.Exps.viewportbottom,
 		C3.Plugins.Sprite.Cnds.IsOnScreen,
@@ -3005,8 +3005,10 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 		C3.Plugins.Sprite.Acts.SetAnim,
 		C3.Behaviors.Platform.Cnds.IsFalling,
 		C3.Plugins.Sprite.Cnds.IsOverlapping,
-		C3.Plugins.Sprite.Cnds.OnCreated,
+		C3.Plugins.Touch.Cnds.IsTouchingObject,
 		C3.Plugins.Sprite.Cnds.CompareX,
+		C3.Plugins.Sprite.Acts.SetX,
+		C3.Plugins.Sprite.Cnds.OnCreated,
 		C3.Behaviors.MoveTo.Acts.SetMaxSpeed,
 		C3.Behaviors.MoveTo.Acts.SetAcceleration,
 		C3.Behaviors.MoveTo.Acts.SetRotateSpeed,
@@ -3022,14 +3024,27 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 		C3.Plugins.Sprite.Acts.Destroy,
 		C3.Plugins.System.Acts.Wait,
 		C3.Plugins.System.Acts.RestartLayout,
+		C3.Plugins.System.Cnds.TriggerOnce,
+		C3.Plugins.System.Acts.SubVar,
 		C3.Behaviors.Platform.Cnds.OnLand,
 		C3.Behaviors.Platform.Acts.SetDoubleJumpEnabled,
-		C3.Plugins.Sprite.Acts.SetVisible,
 		C3.Plugins.System.Acts.SetTimescale,
+		C3.Plugins.Text.Acts.SetText,
+		C3.Plugins.Text.Acts.SetVisible,
+		C3.Plugins.System.Cnds.CompareVar,
+		C3.Plugins.Text.Acts.SetPos,
 		C3.Plugins.Touch.Cnds.OnTapGestureObject,
+		C3.Plugins.Text.Acts.SetFontFace,
+		C3.Plugins.Sprite.Acts.SetPosToObject,
+		C3.Behaviors.DragnDrop.Cnds.OnDrop,
+		C3.Behaviors.DragnDrop.Cnds.IsDragging,
+		C3.Plugins.Keyboard.Cnds.OnKey,
 		C3.Plugins.Sprite.Cnds.IsVisible,
+		C3.Plugins.System.Acts.AddVar,
 		C3.Behaviors.Platform.Acts.ResetDoubleJump,
-		C3.Plugins.Keyboard.Cnds.OnKey
+		C3.Plugins.System.Acts.GoToLayout,
+		C3.Plugins.System.Acts.ResetGlobals,
+		C3.Behaviors.MoveTo.Cnds.OnArrived
 		];
 	};
 	self.C3_JsPropNameTable = [
@@ -3069,19 +3084,38 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 		{TextAnswer2: 0},
 		{TextAnswer3: 0},
 		{TextAnswer4: 0},
-		{TextAnswer5: 0},
+		{TextAnswer1: 0},
+		{Question: 0},
 		{coin2: 0},
+		{TextFeedback: 0},
+		{YesBtn2: 0},
+		{coin3: 0},
+		{TextCorrect: 0},
+		{Sine2: 0},
+		{TextTitle: 0},
+		{PlayBtn: 0},
+		{TextEnd: 0},
+		{TextPlayAgain: 0},
+		{RestartBtn: 0},
+		{TextTutorial: 0},
+		{LeftArrow: 0},
+		{RightArrow: 0},
+		{UpArrow: 0},
+		{Click2: 0},
+		{Accuracy: 0},
 		{CoinBonus: 0},
 		{Scroll: 0},
 		{JumpStrength: 0},
+		{QuestionState: 0},
 		{NextGround: 0},
 		{HazardCreator: 0},
 		{Score: 0},
+		{ScoreBonus: 0},
+		{ScorePenalty: 0},
 		{QNumber: 0},
 		{TextPosition: 0},
 		{Answer: 0},
 		{AnswerSelected: 0},
-		{Ans: 0},
 		{Q1: 0},
 		{Q1A1: 0},
 		{Q1A2: 0},
@@ -3151,7 +3185,18 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 		{Q10A3: 0},
 		{Q10A4: 0},
 		{FBC10: 0},
-		{FBI10: 0}
+		{FBI10: 0},
+		{C1: 0},
+		{C2: 0},
+		{C3: 0},
+		{C4: 0},
+		{C5: 0},
+		{C6: 0},
+		{C7: 0},
+		{C8: 0},
+		{C9: 0},
+		{C10: 0},
+		{TutNum: 0}
 	];
 }
 
@@ -3253,16 +3298,8 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 	}
 
 	self.C3_ExpressionFuncs = [
-		p => {
-			const v0 = p._GetNode(0).GetVar();
-			return () => v0.GetValue();
-		},
-		p => {
-			const v0 = p._GetNode(0).GetVar();
-			return () => Math.floor(Math.abs((v0.GetValue() - 717)));
-		},
 		() => "Jumping Scroll",
-		() => 3,
+		() => 0,
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
 			return () => f0(0, 1, 2, 3, 4, 5, 6, 7, 8, 9);
@@ -3277,9 +3314,12 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 		() => 730,
 		() => 900,
 		() => 1100,
-		() => 1250,
+		() => 1300,
 		() => 717,
-		() => 0,
+		p => {
+			const v0 = p._GetNode(0).GetVar();
+			return () => v0.GetValue();
+		},
 		p => {
 			const n0 = p._GetNode(0);
 			return () => n0.ExpObject();
@@ -3315,6 +3355,8 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 		},
 		() => "Jump",
 		() => "Idle",
+		() => -20,
+		() => 820,
 		() => "Hazards",
 		() => 5000,
 		p => {
@@ -3338,6 +3380,7 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 		() => 200,
 		() => 70,
 		() => 20000,
+		() => 3,
 		p => {
 			const n0 = p._GetNode(0);
 			return () => (n0.ExpObject() + 75);
@@ -3347,6 +3390,13 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 		() => "Bird",
 		() => "Flower",
 		() => 1.5,
+		p => {
+			const v0 = p._GetNode(0).GetVar();
+			const v1 = p._GetNode(1).GetVar();
+			return () => Math.floor(((v0.GetValue() + v1.GetValue()) / 2));
+		},
+		() => 1000,
+		() => "Death",
 		() => "Bonus",
 		p => {
 			const f0 = p._GetNode(0).GetBoundMethod();
@@ -3359,8 +3409,90 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 		() => 0.05,
 		() => 2500,
 		() => "Question Coin",
+		p => {
+			const f0 = p._GetNode(0).GetBoundMethod();
+			return () => f0(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24);
+		},
+		p => {
+			const v0 = p._GetNode(0).GetVar();
+			return () => (and("Question ", v0.GetValue()) + " of 10");
+		},
+		() => "Question",
+		() => "Question1",
+		() => "Question2",
+		() => "Question3",
+		() => "Question4",
+		() => 4,
+		() => "Question5",
+		() => 5,
+		() => "Question6",
+		() => 6,
+		() => "Question7",
+		() => 7,
+		() => "Question8",
+		() => 8,
+		() => "Question9",
+		() => 9,
+		() => "Question10",
+		() => 10,
+		() => "Randomizer",
+		() => 222,
+		() => 743,
+		() => 1043,
+		() => 582,
+		() => 11,
+		() => 12,
+		() => 13,
+		() => 14,
+		() => 15,
+		() => 16,
+		() => 17,
+		() => 18,
+		() => 19,
+		() => 20,
+		() => 21,
+		() => 22,
+		() => 23,
+		() => 24,
+		() => "UI",
+		p => {
+			const v0 = p._GetNode(0).GetVar();
+			const v1 = p._GetNode(1).GetVar();
+			return () => (v0.GetValue() + v1.GetValue());
+		},
+		p => {
+			const v0 = p._GetNode(0).GetVar();
+			return () => Math.floor(Math.abs((v0.GetValue() - 717)));
+		},
+		() => "Roboto",
+		() => 403,
+		() => 1302,
+		() => "Feedback",
+		() => "CORRECT!",
+		() => "INCORRECT",
 		() => 4000,
-		() => "Death"
+		() => "Full",
+		() => "End",
+		p => {
+			const v0 = p._GetNode(0).GetVar();
+			const v1 = p._GetNode(1).GetVar();
+			return () => (and((((and("Your Score: ", v0.GetValue()) + "\n") + "\n") + "Accuracy: "), ((v1.GetValue() / 10) * 100)) + "%");
+		},
+		() => 1039,
+		() => "Default",
+		() => 550,
+		() => 1375,
+		() => "Tap the left arrow to move left",
+		() => "Animation 1",
+		() => 1040,
+		() => "Tap the right arrow to move right",
+		() => 725,
+		() => "Tap the up arrow to jump",
+		() => "Controls2",
+		() => "Hazards2",
+		() => "Bee2",
+		() => "Bird2",
+		() => "Flower2"
 	];
 }
 
