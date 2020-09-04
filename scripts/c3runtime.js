@@ -3037,13 +3037,15 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 		C3.Behaviors.DragnDrop.Cnds.OnDrop,
 		C3.Behaviors.DragnDrop.Cnds.IsDragging,
 		C3.Plugins.Keyboard.Cnds.OnKey,
-		C3.Plugins.System.Acts.AddVar,
+		C3.Plugins.Text.Cnds.CompareText,
 		C3.Behaviors.Platform.Acts.ResetDoubleJump,
+		C3.Plugins.System.Acts.AddVar,
 		C3.Plugins.System.Acts.GoToLayout,
 		C3.Plugins.System.Acts.ResetGlobals,
 		C3.Behaviors.MoveTo.Acts.MoveToPosition,
 		C3.Behaviors.MoveTo.Cnds.OnArrived,
-		C3.Plugins.Touch.Cnds.OnTouchObject
+		C3.Plugins.Touch.Cnds.OnTouchObject,
+		C3.Plugins.System.Cnds.OnLoadFinished
 		];
 	};
 	self.C3_JsPropNameTable = [
@@ -3101,6 +3103,10 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 		{RightArrow: 0},
 		{UpArrow: 0},
 		{Click2: 0},
+		{BeeLoader: 0},
+		{Layer: 0},
+		{mdsjj: 0},
+		{skip: 0},
 		{Accuracy: 0},
 		{CoinBonus: 0},
 		{Scroll: 0},
@@ -3352,6 +3358,8 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 		() => "Idle",
 		() => -20,
 		() => 820,
+		() => "Down",
+		() => "Default",
 		() => "Hazards",
 		() => 5000,
 		p => {
@@ -3471,10 +3479,19 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 		p => {
 			const v0 = p._GetNode(0).GetVar();
 			const v1 = p._GetNode(1).GetVar();
-			return () => (and((((and("Your Score: ", v0.GetValue()) + "\n") + "\n") + "Accuracy: "), ((v1.GetValue() / 10) * 100)) + "%");
+			const v2 = p._GetNode(2).GetVar();
+			const v3 = p._GetNode(3).GetVar();
+			const v4 = p._GetNode(4).GetVar();
+			const v5 = p._GetNode(5).GetVar();
+			const v6 = p._GetNode(6).GetVar();
+			const v7 = p._GetNode(7).GetVar();
+			const v8 = p._GetNode(8).GetVar();
+			const v9 = p._GetNode(9).GetVar();
+			const v10 = p._GetNode(10).GetVar();
+			const v11 = p._GetNode(11).GetVar();
+			return () => (and((((and("Your Score: ", (v0.GetValue() + v1.GetValue())) + "\n") + "\n") + "Accuracy: "), (((((((((((v2.GetValue() + v3.GetValue()) + v4.GetValue()) + v5.GetValue()) + v6.GetValue()) + v7.GetValue()) + v8.GetValue()) + v9.GetValue()) + v10.GetValue()) + v11.GetValue()) / 10) * 100)) + "%");
 		},
 		() => 1039,
-		() => "Default",
 		() => 550,
 		() => 1375,
 		() => "Tap the left arrow to move left",
