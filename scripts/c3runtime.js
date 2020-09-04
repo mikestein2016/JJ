@@ -3031,6 +3031,7 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 		C3.Plugins.System.Cnds.CompareVar,
 		C3.Plugins.Text.Acts.SetPos,
 		C3.Plugins.Touch.Cnds.OnTapGestureObject,
+		C3.Plugins.Text.Cnds.IsVisible,
 		C3.Plugins.Text.Acts.SetFontFace,
 		C3.Plugins.Sprite.Acts.SetPosToObject,
 		C3.Behaviors.DragnDrop.Cnds.OnDrop,
@@ -3041,7 +3042,8 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 		C3.Plugins.System.Acts.GoToLayout,
 		C3.Plugins.System.Acts.ResetGlobals,
 		C3.Behaviors.MoveTo.Acts.MoveToPosition,
-		C3.Behaviors.MoveTo.Cnds.OnArrived
+		C3.Behaviors.MoveTo.Cnds.OnArrived,
+		C3.Plugins.Touch.Cnds.OnTouchObject
 		];
 	};
 	self.C3_JsPropNameTable = [
@@ -3481,6 +3483,9 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 		() => "Tap the right arrow to move right",
 		() => 725,
 		() => "Tap the up arrow to jump",
+		() => 1220,
+		() => 625,
+		() => "Collect the coin!",
 		() => "Controls2",
 		() => "Hazards2",
 		() => "Bee2",
