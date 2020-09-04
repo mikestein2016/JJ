@@ -3514,7 +3514,7 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 		() => 4000,
 		() => "Full",
 		() => "End",
-		() => "CONGRATULATIONS!",
+		() => "GAME OVER",
 		p => {
 			const v0 = p._GetNode(0).GetVar();
 			const v1 = p._GetNode(1).GetVar();
