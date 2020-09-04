@@ -2991,16 +2991,10 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 		C3.Plugins.System.Exps.viewportbottom,
 		C3.Plugins.Sprite.Cnds.IsOnScreen,
 		C3.Plugins.Sprite.Acts.SetPos,
-		C3.Plugins.Touch.Cnds.OnTouchEnd,
-		C3.Behaviors.Platform.Cnds.IsMoving,
-		C3.Plugins.Sprite.Cnds.IsAnimPlaying,
-		C3.Behaviors.Platform.Acts.SimulateControl,
-		C3.Plugins.Touch.Cnds.IsInTouch,
-		C3.Behaviors.MoveTo.Acts.MoveToPosition,
-		C3.Plugins.Touch.Exps.X,
-		C3.Behaviors.MoveTo.Acts.Stop,
 		C3.Plugins.gamepad.Cnds.CompareAxis,
 		C3.Behaviors.Platform.Cnds.IsOnFloor,
+		C3.Plugins.Sprite.Cnds.IsAnimPlaying,
+		C3.Behaviors.Platform.Acts.SimulateControl,
 		C3.Behaviors.Platform.Cnds.IsJumping,
 		C3.Plugins.Sprite.Acts.SetAnim,
 		C3.Behaviors.Platform.Cnds.IsFalling,
@@ -3018,6 +3012,7 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 		C3.Plugins.Sprite.Cnds.CompareInstanceVar,
 		C3.Behaviors.Sin.Acts.SetEnabled,
 		C3.Behaviors.MoveTo.Acts.MoveToObject,
+		C3.Behaviors.MoveTo.Acts.Stop,
 		C3.Behaviors.Physics.Acts.SetEnabled,
 		C3.Behaviors.MoveTo.Cnds.IsMoving,
 		C3.Plugins.Sprite.Cnds.OnCollision,
@@ -3031,6 +3026,7 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 		C3.Plugins.System.Acts.SetTimescale,
 		C3.Plugins.Text.Acts.SetText,
 		C3.Plugins.Text.Acts.SetVisible,
+		C3.Behaviors.Platform.Cnds.IsMoving,
 		C3.Plugins.System.Cnds.CompareVar,
 		C3.Plugins.Text.Acts.SetPos,
 		C3.Plugins.Touch.Cnds.OnTapGestureObject,
@@ -3044,6 +3040,7 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 		C3.Behaviors.Platform.Acts.ResetDoubleJump,
 		C3.Plugins.System.Acts.GoToLayout,
 		C3.Plugins.System.Acts.ResetGlobals,
+		C3.Behaviors.MoveTo.Acts.MoveToPosition,
 		C3.Behaviors.MoveTo.Cnds.OnArrived
 		];
 	};
@@ -3349,10 +3346,6 @@ newY);wi.SetBboxChanged()}}else if(this._axes===1){if(wi.GetX()!==newX){wi.SetX(
 		},
 		() => "Controls",
 		() => "Dead",
-		p => {
-			const f0 = p._GetNode(0).GetBoundMethod();
-			return () => f0();
-		},
 		() => "Jump",
 		() => "Idle",
 		() => -20,
